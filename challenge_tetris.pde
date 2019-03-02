@@ -4,7 +4,7 @@ float nyi = 8;
 
 int orientation = 0;
 
-Piece pieces[] = new Piece[1];
+Piece pieces[] = new Piece[7];
 Piece p;
 
 void setup(){
