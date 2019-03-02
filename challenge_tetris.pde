@@ -9,11 +9,15 @@ Piece p;
 
 void setup(){
   size(400,800);
+  
   for(int i=0; i<pieces.length; i++){
     pieces[i] = new Piece(l, nxi + i*5, nyi);
     pieces[i].type = i;
   }
-  //p = new Piece(l, nxi, nyi);
+  /*
+  p = new Piece(l, nxi, nyi);
+  p.type = 1;
+  */
   frameRate(2);
   
 }
@@ -24,8 +28,12 @@ void draw(){
     moveDown(2);
     
     for(int i=0; i<pieces.length; i++){
-      pieces[i].display(l, nxi + i*5, nyi, orientation);
+      pieces[i].move(2);
+      pieces[i].display();
     }
+    /*
+    p.display();
+    */
 }
 
 void moveDown(float vitesse){
@@ -45,7 +53,9 @@ void moveDown(float vitesse){
 void keyPressed(){
   //orientation 
   if (key == ' '){
-     orientation = switchOrientation(orientation);
+    for(int i=0; i<pieces.length; i++){
+      pieces[i].orientation = switchOrientation(pieces[i].orientation);
+    }
   }
      
   //left or right
