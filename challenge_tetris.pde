@@ -4,7 +4,7 @@ float nyi = 8;
 
 int orientation = 0;
 
-Piece pieces[] = new Piece[7];
+Piece pieces[] = new Piece[1];
 Piece p;
 
 void setup(){
@@ -18,7 +18,7 @@ void setup(){
   p = new Piece(l, nxi, nyi);
   p.type = 1;
   */
-  frameRate(2);
+  frameRate(20);
   
 }
 
@@ -28,7 +28,7 @@ void draw(){
     moveDown(2);
     
     for(int i=0; i<pieces.length; i++){
-      pieces[i].move(2);
+      pieces[i].move(1);
       pieces[i].display();
     }
     /*
@@ -39,6 +39,8 @@ void draw(){
 void moveDown(float vitesse){
   nyi+=vitesse;
 }
+
+
 
 
 
@@ -59,14 +61,20 @@ void keyPressed(){
   }
      
   //left or right
+  int s =0;
   if (key == CODED) {
     if (keyCode == LEFT) {
-      nxi--;
+      s = -1;
     }
     if (keyCode == RIGHT) {
-      nxi++;
+      s = 1;
     }
   }
+  
+  for(int i=0; i<pieces.length; i++){
+      pieces[i].moveSlide(s);
+    }
+  
   
 }
 
