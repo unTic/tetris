@@ -12,28 +12,28 @@ class Piece{
     type = int(random(0,7));
   }
   
-  void display(float l,float nx, float ny, int orientation){
+  void display(){
     switch(type){
       case 0:
-        I(l, nx, ny, orientation);
+        I();
         break;
       case 1:
-        J(l, nx, ny, orientation);
+        J();
         break;
       case 2:
-        L(l, nx, ny, orientation);
+        L();
         break;
       case 3:
-        O(l, nx, ny, orientation);
+        O();
         break;
       case 4:
-        S(l, nx, ny, orientation);
+        S();
         break;
       case 5:
-        T(l, nx, ny, orientation);
+        T();
         break;
       case 6:
-        Z(l, nx, ny, orientation);
+        Z();
         break;
     }
   }
@@ -44,168 +44,168 @@ class Piece{
   
   
   
-void L(float l,float nxi, float nyi, int orientation){
+void L(){
   if(orientation == 0){
-    rect(nxi*l, nyi*l, l, l);
+    rect(nx*l, ny*l, l, l);
     for(int i=0; i<3; i++){
-      rect((nxi-1)*l, (nyi-i)*l, l, l);
+      rect((nx-1)*l, (ny-i)*l, l, l);
     }
   } 
   else if (orientation == 1){
-    rect(nxi*l, nyi*l, l, l);
+    rect(nx*l, ny*l, l, l);
     for(int i=0; i<3; i++){
-      rect((nxi+i)*l, (nyi-1)*l, l, l);
+      rect((nx+i)*l, (ny-1)*l, l, l);
     }
   }
   else if (orientation == 2){
-    rect(nxi*l, nyi*l, l, l);
+    rect(nx*l, ny*l, l, l);
     for(int i=0; i<3; i++){
-      rect((nxi+1)*l, (nyi+i)*l, l, l);
+      rect((nx+1)*l, (ny+i)*l, l, l);
     }
   }
   else if (orientation == 3){
-    rect(nxi*l, nyi*l, l, l);
+    rect(nx*l, ny*l, l, l);
     for(int i=0; i<3; i++){
-      rect((nxi-i)*l, (nyi+1)*l, l, l);
+      rect((nx-i)*l, (ny+1)*l, l, l);
     }
   }
 }
 
-  void J(float l,float nxi, float nyi, int orientation){
+  void J(){
     if(orientation == 0){
-      rect(nxi*l, nyi*l, l, l);
+      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nxi+1)*l, (nyi-i)*l, l, l);
+        rect((nx+1)*l, (ny-i)*l, l, l);
       }
     } 
     else if (orientation == 1){
-      rect(nxi*l, nyi*l, l, l);
+      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nxi+i)*l, (nyi+1)*l, l, l);
+        rect((nx+i)*l, (ny+1)*l, l, l);
       }
     }
     else if (orientation == 2){
-      rect(nxi*l, nyi*l, l, l);
+      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nxi-1)*l, (nyi+i)*l, l, l);
+        rect((nx-1)*l, (ny+i)*l, l, l);
       }
     }
     else if (orientation == 3){
-      rect(nxi*l, nyi*l, l, l);
+      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nxi-i)*l, (nyi-1)*l, l, l);
+        rect((nx-i)*l, (ny-1)*l, l, l);
       }
     }
   }
   
-  void T(float l,float nxi, float nyi, int orientation){
+  void T(){
     if(orientation == 0){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi-1)*l, (nyi)*l, l, l);
-      rect((nxi)*l, (nyi-1)*l, l, l);
-      rect((nxi+1)*l, (nyi)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx-1)*l, (ny)*l, l, l);
+      rect((nx)*l, (ny-1)*l, l, l);
+      rect((nx+1)*l, (ny)*l, l, l);
     } 
     else if (orientation == 1){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi)*l, (nyi-1)*l, l, l);
-      rect((nxi+1)*l, (nyi)*l, l, l);
-      rect((nxi)*l, (nyi+1)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx)*l, (ny-1)*l, l, l);
+      rect((nx+1)*l, (ny)*l, l, l);
+      rect((nx)*l, (ny+1)*l, l, l);
     }
     else if (orientation == 2){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi+1)*l, (nyi)*l, l, l);
-      rect((nxi)*l, (nyi+1)*l, l, l);
-      rect((nxi-1)*l, (nyi)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx+1)*l, (ny)*l, l, l);
+      rect((nx)*l, (ny+1)*l, l, l);
+      rect((nx-1)*l, (ny)*l, l, l);
     }
     else if (orientation == 3){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi)*l, (nyi+1)*l, l, l);
-      rect((nxi-1)*l, (nyi)*l, l, l);
-      rect((nxi)*l, (nyi-1)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx)*l, (ny+1)*l, l, l);
+      rect((nx-1)*l, (ny)*l, l, l);
+      rect((nx)*l, (ny-1)*l, l, l);
     }
   }
   
-  void Z(float l,float nxi, float nyi, int orientation){
+  void Z(){
     if(orientation == 0){
-      rect(nxi*l, nyi*l, l, l);
-      rect(nxi*l, (nyi+1)*l, l, l);
-      rect((nxi-1)*l, (nyi+1)*l, l, l);
-      rect((nxi-1)*l, (nyi+2)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect(nx*l, (ny+1)*l, l, l);
+      rect((nx-1)*l, (ny+1)*l, l, l);
+      rect((nx-1)*l, (ny+2)*l, l, l);
     } 
     else if (orientation == 1){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi-1)*l, (nyi)*l, l, l);
-      rect((nxi-1)*l, (nyi-1)*l, l, l);
-      rect((nxi-2)*l, (nyi-1)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx-1)*l, (ny)*l, l, l);
+      rect((nx-1)*l, (ny-1)*l, l, l);
+      rect((nx-2)*l, (ny-1)*l, l, l);
     }
     else if (orientation == 2){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi)*l, (nyi-1)*l, l, l);
-      rect((nxi+1)*l, (nyi-1)*l, l, l);
-      rect((nxi+1)*l, (nyi-2)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx)*l, (ny-1)*l, l, l);
+      rect((nx+1)*l, (ny-1)*l, l, l);
+      rect((nx+1)*l, (ny-2)*l, l, l);
     }
     else if (orientation == 3){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi+1)*l, (nyi)*l, l, l);
-      rect((nxi+1)*l, (nyi+1)*l, l, l);
-      rect((nxi+2)*l, (nyi+1)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx+1)*l, (ny)*l, l, l);
+      rect((nx+1)*l, (ny+1)*l, l, l);
+      rect((nx+2)*l, (ny+1)*l, l, l);
     }
   }
   
-  void S(float l,float nxi, float nyi, int orientation){
+  void S(){
     if(orientation == 0){
-      rect(nxi*l, nyi*l, l, l);
-      rect(nxi*l, (nyi+1)*l, l, l);
-      rect((nxi+1)*l, (nyi+1)*l, l, l);
-      rect((nxi+1)*l, (nyi+2)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect(nx*l, (ny+1)*l, l, l);
+      rect((nx+1)*l, (ny+1)*l, l, l);
+      rect((nx+1)*l, (ny+2)*l, l, l);
     } 
     else if (orientation == 1){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi-1)*l, (nyi)*l, l, l);
-      rect((nxi-1)*l, (nyi+1)*l, l, l);
-      rect((nxi-2)*l, (nyi+1)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx-1)*l, (ny)*l, l, l);
+      rect((nx-1)*l, (ny+1)*l, l, l);
+      rect((nx-2)*l, (ny+1)*l, l, l);
     }
     else if (orientation == 2){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi)*l, (nyi-1)*l, l, l);
-      rect((nxi-1)*l, (nyi-1)*l, l, l);
-      rect((nxi-1)*l, (nyi-2)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx)*l, (ny-1)*l, l, l);
+      rect((nx-1)*l, (ny-1)*l, l, l);
+      rect((nx-1)*l, (ny-2)*l, l, l);
     }
     else if (orientation == 3){
-      rect(nxi*l, nyi*l, l, l);
-      rect((nxi+1)*l, (nyi)*l, l, l);
-      rect((nxi+1)*l, (nyi-1)*l, l, l);
-      rect((nxi+2)*l, (nyi-1)*l, l, l);
+      rect(nx*l, ny*l, l, l);
+      rect((nx+1)*l, (ny)*l, l, l);
+      rect((nx+1)*l, (ny-1)*l, l, l);
+      rect((nx+2)*l, (ny-1)*l, l, l);
     }
   }
   
-  void I(float l, float nxi, float nyi, int orientation){
+  void I(){
     if(orientation == 0){
         for(int i=0; i<4; i++){
-           rect((nxi + i)*l, nyi*l, l, l);
+           rect((nx + i)*l, ny*l, l, l);
         }
       } 
       else if (orientation == 1){
         for(int i=0; i<4; i++){
-           rect(nxi*l, (nyi + i)*l, l, l);
+           rect(nx*l, (ny + i)*l, l, l);
         }
       }
       else if (orientation == 2){
         for(int i=0; i<4; i++){
-           rect((nxi - i)*l, nyi*l, l, l);
+           rect((nx - i)*l, ny*l, l, l);
         }
       }
       else if (orientation == 3){
         for(int i=0; i<4; i++){
-           rect(nxi*l, (nyi - i)*l, l, l);
+           rect(nx*l, (ny - i)*l, l, l);
         }
       }
   }
   
-  void O(float l, float nxi, float nyi, int orientation){
+  void O(){
     for(int i=0; i<2; i++){
       for(int j=0; j<2; j++){
-        rect((nxi+i)*l, (nyi+j)*l, l, l);
+        rect((nx+i)*l, (ny+j)*l, l, l);
       }
     }
   }
