@@ -93,141 +93,201 @@ void L(){
 }
 
   void J(){
+    
+    pos[0].x = nx*l;
+    pos[0].y = ny*l;
+    
     if(orientation == 0){
-      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nx+1)*l, (ny-i)*l, l, l);
+        pos[i+1].x = (nx+1)*l;
+        pos[i+1].y = (ny-i)*l;
       }
     } 
     else if (orientation == 1){
-      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nx+i)*l, (ny+1)*l, l, l);
+        pos[i+1].x = (nx+i)*l;
+        pos[i+1].y = (ny+1)*l;
       }
     }
     else if (orientation == 2){
-      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nx-1)*l, (ny+i)*l, l, l);
+        pos[i+1].x = (nx-1)*l;
+        pos[i+1].y = (ny+i)*l;
       }
     }
     else if (orientation == 3){
-      rect(nx*l, ny*l, l, l);
       for(int i=0; i<3; i++){
-        rect((nx-i)*l, (ny-1)*l, l, l);
+        pos[i+1].x = (nx-i)*l;
+        pos[i+1].y = (ny-1)*l;
       }
     }
   }
   
   void T(){
+    pos[0].x = nx*l;
+    pos[0].y = ny*l;
     if(orientation == 0){
-      rect(nx*l, ny*l, l, l);
-      rect((nx-1)*l, (ny)*l, l, l);
-      rect((nx)*l, (ny-1)*l, l, l);
-      rect((nx+1)*l, (ny)*l, l, l);
+      pos[1].x = (nx-1)*l;
+      pos[1].y = (ny)*l;
+      pos[2].x = (nx)*l;
+      pos[2].y = (ny-1)*l;
+      pos[3].x = (nx+1)*l;
+      pos[3].y = (ny)*l;
     } 
     else if (orientation == 1){
-      rect(nx*l, ny*l, l, l);
-      rect((nx)*l, (ny-1)*l, l, l);
-      rect((nx+1)*l, (ny)*l, l, l);
-      rect((nx)*l, (ny+1)*l, l, l);
+      pos[1].x = (nx)*l;
+      pos[1].y = (ny-1)*l;
+      pos[2].x = (nx+1)*l;
+      pos[2].y = (ny)*l;
+      pos[3].x = (nx)*l;
+      pos[3].y = (ny+1)*l;
     }
     else if (orientation == 2){
-      rect(nx*l, ny*l, l, l);
-      rect((nx+1)*l, (ny)*l, l, l);
-      rect((nx)*l, (ny+1)*l, l, l);
-      rect((nx-1)*l, (ny)*l, l, l);
+      pos[1].x = (nx+1)*l;
+      pos[1].y = (ny)*l;
+      pos[2].x = (nx)*l;
+      pos[2].y = (ny+1)*l;
+      pos[3].x = (nx-1)*l;
+      pos[3].y = (ny)*l;
     }
     else if (orientation == 3){
-      rect(nx*l, ny*l, l, l);
-      rect((nx)*l, (ny+1)*l, l, l);
-      rect((nx-1)*l, (ny)*l, l, l);
-      rect((nx)*l, (ny-1)*l, l, l);
+      pos[1].x = (nx)*l;
+      pos[1].y = (ny+1)*l;
+      pos[2].x = (nx-1)*l;
+      pos[2].y = (ny)*l;
+      pos[3].x = (nx)*l;
+      pos[3].y = (ny-1)*l;
     }
   }
   
   void Z(){
+    pos[0].x = nx*l;
+    pos[0].y = ny*l;
     if(orientation == 0){
-      rect(nx*l, ny*l, l, l);
-      rect(nx*l, (ny+1)*l, l, l);
-      rect((nx-1)*l, (ny+1)*l, l, l);
-      rect((nx-1)*l, (ny+2)*l, l, l);
+      pos[1].x = (nx)*l;
+      pos[1].y = (ny+1)*l;
+      
+      pos[2].x = (nx-1)*l;
+      pos[2].y = (ny+1)*l;
+      
+      pos[3].x = (nx-1)*l;
+      pos[3].y = (ny+2)*l;
     } 
     else if (orientation == 1){
-      rect(nx*l, ny*l, l, l);
-      rect((nx-1)*l, (ny)*l, l, l);
-      rect((nx-1)*l, (ny-1)*l, l, l);
-      rect((nx-2)*l, (ny-1)*l, l, l);
+      pos[1].x = (nx-1)*l;
+      pos[1].y = (ny)*l;
+      
+      pos[2].x = (nx-1)*l;
+      pos[2].y = (ny-1)*l;
+      
+      pos[3].x = (nx-2)*l;
+      pos[3].y = (ny-1)*l;
     }
     else if (orientation == 2){
-      rect(nx*l, ny*l, l, l);
-      rect((nx)*l, (ny-1)*l, l, l);
-      rect((nx+1)*l, (ny-1)*l, l, l);
-      rect((nx+1)*l, (ny-2)*l, l, l);
+      pos[1].x = (nx)*l;
+      pos[1].y = (ny-1)*l;
+      
+      pos[2].x = (nx+1)*l;
+      pos[2].y = (ny-1)*l;
+      
+      pos[3].x = (nx+1)*l;
+      pos[3].y = (ny-2)*l;
     }
     else if (orientation == 3){
-      rect(nx*l, ny*l, l, l);
-      rect((nx+1)*l, (ny)*l, l, l);
-      rect((nx+1)*l, (ny+1)*l, l, l);
-      rect((nx+2)*l, (ny+1)*l, l, l);
+      pos[1].x = (nx+1)*l;
+      pos[1].y = (ny)*l;
+      
+      pos[2].x = (nx+1)*l;
+      pos[2].y = (ny+1)*l;
+      
+      pos[3].x = (nx+2)*l;
+      pos[3].y = (ny+1)*l;
     }
   }
   
   void S(){
+    pos[0].x = nx*l;
+    pos[0].y = ny*l;
     if(orientation == 0){
-      rect(nx*l, ny*l, l, l);
-      rect(nx*l, (ny+1)*l, l, l);
-      rect((nx+1)*l, (ny+1)*l, l, l);
-      rect((nx+1)*l, (ny+2)*l, l, l);
+      pos[1].x = (nx)*l;
+      pos[1].y = (ny+1)*l;
+      
+      pos[2].x = (nx+1)*l;
+      pos[2].y = (ny+1)*l;
+      
+      pos[3].x = (nx+1)*l;
+      pos[3].y = (ny+2)*l;
     } 
     else if (orientation == 1){
-      rect(nx*l, ny*l, l, l);
-      rect((nx-1)*l, (ny)*l, l, l);
-      rect((nx-1)*l, (ny+1)*l, l, l);
-      rect((nx-2)*l, (ny+1)*l, l, l);
+      pos[1].x = (nx-1)*l;
+      pos[1].y = (ny)*l;
+      
+      pos[2].x = (nx-1)*l;
+      pos[2].y = (ny+1)*l;
+      
+      pos[3].x = (nx-2)*l;
+      pos[3].y = (ny+1)*l;
     }
     else if (orientation == 2){
-      rect(nx*l, ny*l, l, l);
-      rect((nx)*l, (ny-1)*l, l, l);
-      rect((nx-1)*l, (ny-1)*l, l, l);
-      rect((nx-1)*l, (ny-2)*l, l, l);
+      pos[1].x = (nx)*l;
+      pos[1].y = (ny-1)*l;
+      
+      pos[2].x = (nx-1)*l;
+      pos[2].y = (ny-1)*l;
+      
+      pos[3].x = (nx-1)*l;
+      pos[3].y = (ny-2)*l;
     }
     else if (orientation == 3){
-      rect(nx*l, ny*l, l, l);
-      rect((nx+1)*l, (ny)*l, l, l);
-      rect((nx+1)*l, (ny-1)*l, l, l);
-      rect((nx+2)*l, (ny-1)*l, l, l);
+      pos[1].x = (nx+1)*l;
+      pos[1].y = (ny)*l;
+      
+      pos[2].x = (nx+1)*l;
+      pos[2].y = (ny-1)*l;
+      
+      pos[3].x = (nx+2)*l;
+      pos[3].y = (ny-1)*l;
     }
   }
   
   void I(){
+    pos[0].x = nx*l;
+    pos[0].y = ny*l;
     if(orientation == 0){
         for(int i=0; i<4; i++){
-           rect((nx + i)*l, ny*l, l, l);
+           pos[i].x = (nx + i)*l;
+           pos[i].y = ny*l;
         }
       } 
       else if (orientation == 1){
         for(int i=0; i<4; i++){
-           rect(nx*l, (ny + i)*l, l, l);
+           pos[i].x = (nx)*l;
+           pos[i].y = (ny + i)*l;
         }
       }
       else if (orientation == 2){
         for(int i=0; i<4; i++){
-           rect((nx - i)*l, ny*l, l, l);
+           pos[i].x = (nx-i)*l;
+           pos[i].y = (ny)*l;
         }
       }
       else if (orientation == 3){
         for(int i=0; i<4; i++){
-           rect(nx*l, (ny - i)*l, l, l);
+           pos[i].x = (nx)*l;
+           pos[i].y = (ny - i)*l;
         }
       }
   }
   
   void O(){
-    for(int i=0; i<2; i++){
-      for(int j=0; j<2; j++){
-        rect((nx+i)*l, (ny+j)*l, l, l);
-      }
-    }
+    pos[0].x = (nx)*l;
+    pos[0].y = (ny)*l;
+    pos[1].x = (nx)*l;
+    pos[1].y = (ny+1)*l;
+    pos[2].x = (nx+1)*l;
+    pos[2].y = (ny+1)*l;
+    pos[3].x = (nx+1)*l;
+    pos[3].y = (ny)*l;
   }
+  
 }
